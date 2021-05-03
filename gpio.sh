@@ -1,5 +1,11 @@
 #!/bin/bash
 
+## author , jonathan smyth
+## tested on jetson linux enviroment. 
+## takes params gpioY and gpioX number.
+## simple GPIO shell script 
+## checks the state of y and based on its state changes X according to breif
+
 while getopts ":x:y:" opt; do
   case $opt in
     y) arg1="$OPTARG"

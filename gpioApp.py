@@ -6,6 +6,20 @@ import time
 import logging
 
 
+"""
+Author Jonathan Smyth
+date: April 30 2021.
+DEscription: SIMPLE GPIO HANDLER, ran and tested on jetson linux env. 
+params are gpioY and gpioX nums with -y -x respectively.
+create object of pin to control it, the pin is setup as export and out, could be changed to do it for all cases of GPIO handling
+by adding new functions and paramts. logs to file when gpio Y is set low.
+
+
+"""
+
+# toggle debug mode. default is off.
+DEBUG = False
+
 ## setup logging here.
 ##
 Logger = logging.getLogger('gpio < Y >')
@@ -113,7 +127,7 @@ def tests(pin):
          print("pin should be high, something wrong.")
          sys.exit(1)
 
-DEBUG = True
+
 
 def main(argv):
    gpioY = ''
