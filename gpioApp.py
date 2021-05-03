@@ -93,8 +93,27 @@ class Pin():
         return int(val)
 
 
+def tests(pin):
+   """
+   checking the turning on and off each pin is working, if this is ok, then all should be ok. 
+   """
 
+      print("triggering pin")
+      pin.pin_high()
+      if(pin.read_state == 1):
+         print("pin high, correct.")
+      else:
+         print("pin should be low, something wrong.")
+         sys.exit(1)
 
+      pin.pin_low()
+      if(pin.read_state == 0):
+         print("pin low, correct.")
+      else:
+         print("pin should be high, something wrong.")
+         sys.exit(1)
+
+DEBUG = True
 
 def main(argv):
    gpioY = ''
@@ -120,6 +139,11 @@ def main(argv):
          
    xPin = Pin((gpioX))
    yPin = Pin((gpioY))
+
+   if(DEBUG):
+      test(xPin)
+      test(yPin)
+
    print(yPin.read_state())
    if(yPin.read_state == 1):
       print("triggering pin")
