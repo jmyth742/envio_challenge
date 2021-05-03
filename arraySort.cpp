@@ -29,13 +29,6 @@ void bin_sort(int* number, int count) {
       }
    }
 
-//    printf("Sorted elements: ");
-//    for(int i=0;i<count;i++)
-//       printf(" %d",number[i]);
-
-// //    return 0;
-    }
-
 
  
 /* Driver program to test above function */
